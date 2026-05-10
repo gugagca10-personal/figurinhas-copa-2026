@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:football-sticker-album.fandom.com)",
+      "WebFetch(domain:www.checklistinsider.com)",
+      "Bash(convert --version)",
+      "Bash(python3 -c \"from PIL import Image; print\\('Pillow OK'\\)\")",
+      "Bash(python3 -)",
+      "Bash(npm install *)",
+      "Bash(pkill -f \"vite --port 5173\")",
+      "Bash(node -e \" const { ALL_STICKERS, TEAMS, TOTAL } = await import\\('./src/data/stickers.ts'\\).catch\\(\\(\\) => { // Use tsc to check instead process.exit\\(0\\) }\\) \")",
+      "Bash(npm run *)",
+      "Bash(node --input-type=module)"
+    ]
+  }
+}
