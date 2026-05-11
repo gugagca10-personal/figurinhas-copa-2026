@@ -1,17 +1,21 @@
 import { TOTAL } from '../data/stickers'
+import { ModeToggle, type Mode } from './ModeToggle'
 
 interface Props {
   ownedCount: number
+  totalRepeated: number
+  mode: Mode
+  onModeChange: (m: Mode) => void
   onReset: () => void
 }
 
-export function StatsBar({ ownedCount, onReset }: Props) {
+export function StatsBar({ ownedCount, totalRepeated, mode, onModeChange, onReset }: Props) {
   const missing = TOTAL - ownedCount
   const pct = Math.round((ownedCount / TOTAL) * 100)
 
   return (
-    <header className="bg-slate-900 border-b border-slate-700/50 px-3 pt-safe pt-3 pb-2">
-      <div className="flex items-center justify-between mb-1.5">
+    <header className="bg-slate-900 border-b border-slate-700/50 px-3 pt-safe pt-3 pb-2 space-y-2">
+      <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="text-lg">⚽</span>
           <div>
@@ -42,6 +46,8 @@ export function StatsBar({ ownedCount, onReset }: Props) {
           <span className="text-slate-500 font-sans">{pct}%</span>
         </div>
       </div>
+
+      <ModeToggle mode={mode} onChange={onModeChange} totalRepeated={totalRepeated} />
     </header>
   )
 }

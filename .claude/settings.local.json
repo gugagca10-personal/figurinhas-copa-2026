@@ -11,7 +11,9 @@
       "Bash(pkill -f \"vite --port 5173\")",
       "Bash(node -e \" const { ALL_STICKERS, TEAMS, TOTAL } = await import\\('./src/data/stickers.ts'\\).catch\\(\\(\\) => { // Use tsc to check instead process.exit\\(0\\) }\\) \")",
       "Bash(npm run *)",
-      "Bash(node --input-type=module)"
+      "Bash(node --input-type=module)",
+      "Bash(git remote *)",
+      "Bash(gh --version)"
     ]
   }
 }
